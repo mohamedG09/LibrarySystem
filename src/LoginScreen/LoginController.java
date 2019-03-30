@@ -4,6 +4,9 @@ import DataPackage.DataSource;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 
@@ -11,6 +14,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class LoginController {
     @FXML
@@ -48,8 +53,36 @@ public class LoginController {
                 invalidLabel.setOpacity(0.5);
             }
             else{
-
                 System.out.println("Acess Granted");
+                if(pass.equals("admin")){
+
+                    Pane root = FXMLLoader.load(getClass().getResource("/AdminScreen/AdminScreenGUI.fxml"));
+                    Scene scene = new Scene(root);
+                    Stage stage = new Stage();
+                    stage.setScene(scene);
+
+                    //closing old scene, opening new scene
+                    Stage Currentstage = (Stage)LoginButton.getScene().getWindow();
+                    Currentstage.close();
+
+                    stage.show();
+                }
+                else {
+
+                    //New scene
+                    Pane root = FXMLLoader.load(getClass().getResource("/StudentScreen/StudentScreenGUI.fxml"));
+                    Scene scene = new Scene(root);
+                    Stage stage = new Stage();
+                    stage.setScene(scene);
+
+                    //closing old Scene and opening the new Scene
+                    Stage currentStage = (Stage)LoginButton.getScene().getWindow();
+                    currentStage.close();
+
+                    stage.show();
+                }
+                statement.close();
+                results.close();
             }
 
         }
