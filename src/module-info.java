@@ -5,5 +5,9 @@ module LibrarySystem {
     requires javafx.base;
     requires javafx.swing;
     requires com.jfoenix;
+    requires java.sql;
+
+    opens DataPackage;
     opens LoginScreen;
+
 }

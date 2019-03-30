@@ -18,21 +18,29 @@
             <DropShadow blurType="GAUSSIAN" height="87.73" radius="37.4075" spread="0.43" width="63.9" />
          </effect>
       </Label>
-      <JFXTextField focusColor="#b5b5b7" labelFloat="true" layoutX="33.0" layoutY="160.0" prefHeight="39.0" prefWidth="287.0" promptText="Username" style="-fx-text-fill: #b5b5b7;" unFocusColor="#677077">
+      <JFXTextField fx:id="userField" focusColor="#b5b5b7" labelFloat="true" layoutX="33.0" layoutY="160.0" prefHeight="39.0" prefWidth="287.0" promptText="Username" style="-fx-text-fill: #b5b5b7;" unFocusColor="#677077">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField focusColor="#b5b5b7" labelFloat="true" layoutX="33.0" layoutY="245.0" prefHeight="39.0" prefWidth="287.0" promptText="Password" style="-fx-text-fill: #b5b5b7;" unFocusColor="#677077" />
-      <Button id="LoginButton" defaultButton="true" layoutX="33.0" layoutY="320.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="124.0" stylesheets="@LoginStyle.css" text="Login" textFill="WHITE">
+      <JFXPasswordField fx:id="PasswordField" focusColor="#b5b5b7" labelFloat="true" layoutX="33.0" layoutY="245.0" prefHeight="39.0" prefWidth="287.0" promptText="Password" style="-fx-text-fill: #b5b5b7;" unFocusColor="#677077">
+         <font>
+            <Font size="15.0" />
+         </font></JFXPasswordField>
+      <Button id="LoginButton" fx:id="LoginButton" defaultButton="true" layoutX="33.0" layoutY="320.0" mnemonicParsing="false" onAction="#handLogin" prefHeight="55.0" prefWidth="124.0" stylesheets="@LoginStyle.css" text="Login" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button id="LoginButton" defaultButton="true" layoutX="196.0" layoutY="320.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="124.0" stylesheets="@LoginStyle.css" text="Sign Up" textFill="WHITE">
+      <Button id="LoginButton" defaultButton="true" layoutX="196.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleSignUp" prefHeight="55.0" prefWidth="124.0" stylesheets="@LoginStyle.css" text="Sign Up" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
+      <Label id="invalidLabel" fx:id="invalidLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="30.0" layoutY="388.0" prefHeight="31.0" prefWidth="287.0" stylesheets="@LoginStyle.css" text="Invalid Username/Password" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="Leelawadee UI" size="19.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

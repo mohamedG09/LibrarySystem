@@ -6,3 +6,10 @@
 #LoginButton:hover,#signup:hover{
     -fx-background-color: #b37e32;
 }
+
+#invalidLabel{
+    -fx-background-color: #cf0000;
+    -fx-border-width: 5px 5px 5px 5px;
+    -fx-text-alignment: CENTER;
+    -fx-opacity: 0;
+}
