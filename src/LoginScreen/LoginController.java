@@ -94,6 +94,20 @@ public class LoginController {
 
     @FXML
     void handleSignUp(ActionEvent event) {
+        try{
+            Pane root = FXMLLoader.load(getClass().getResource("/SignupScreen/SignupGUI.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
 
+            //closing old Scene and opening the new Scene
+            Stage currentStage = (Stage)LoginButton.getScene().getWindow();
+            currentStage.close();
+            stage.show();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+
+        }
     }
 }
