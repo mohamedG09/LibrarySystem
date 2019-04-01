@@ -1,9 +1,9 @@
-#LoginButton,#signup{
+.LoginButton,#signup{
     -fx-background-radius: 0;
     -fx-background-color:  #f2b632;
 }
 
-#LoginButton:hover,#signup:hover{
+.LoginButton:hover,#signup:hover{
     -fx-background-color: #b37e32;
 }
 

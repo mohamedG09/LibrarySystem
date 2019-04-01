@@ -14,6 +14,7 @@ public class LoginApp extends Application {
         stage.setTitle("Login Form");
         stage.setScene(scene);
         stage.setResizable(false);
+        stage.setTitle("Login");
         stage.show();
     }
 

@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 
@@ -48,10 +49,36 @@ public class LoginController {
 
             ResultSet results = statement.executeQuery();
 
+            //Checking in students table
+            ResultSet resultsStudents = conn.prepareStatement("SELECT * FROM Students").executeQuery();
+            while(resultsStudents.next()){
+
+                if(name.equals(resultsStudents.getString(1)) &&
+                        pass.equals(resultsStudents.getString(5))){
+                    //New scene
+                    Pane root = FXMLLoader.load(getClass().getResource("/StudentScreen/StudentScreenGUI.fxml"));
+                    Scene scene = new Scene(root);
+                    Stage stage = new Stage();
+                    stage.setScene(scene);
+
+                    //closing old Scene and opening the new Scene
+                    Stage currentStage = (Stage)LoginButton.getScene().getWindow();
+                    currentStage.close();
+
+                    stage.setTitle("Student Page");
+                    stage.show();
+                    resultsStudents.close();
+                    return;
+                }
+
+            }
+
             if(!results.next()){
                 System.out.println("Undefined User");
                 invalidLabel.setOpacity(0.5);
+                return;
             }
+
             else{
                 System.out.println("Acess Granted");
                 if(pass.equals("admin")){
@@ -65,7 +92,10 @@ public class LoginController {
                     Stage Currentstage = (Stage)LoginButton.getScene().getWindow();
                     Currentstage.close();
 
+                    stage.setResizable(false);
+                    stage.setTitle("Admin Page");
                     stage.show();
+                    return;
                 }
                 else {
 
@@ -79,11 +109,18 @@ public class LoginController {
                     Stage currentStage = (Stage)LoginButton.getScene().getWindow();
                     currentStage.close();
 
+                    stage.setTitle("Student Page");
                     stage.show();
                 }
                 statement.close();
                 results.close();
+                return;
             }
+
+
+
+
+
 
         }
         catch(Exception e){
@@ -103,6 +140,8 @@ public class LoginController {
             //closing old Scene and opening the new Scene
             Stage currentStage = (Stage)LoginButton.getScene().getWindow();
             currentStage.close();
+            stage.setResizable(false);
+            stage.setTitle("Signup Page");
             stage.show();
         }
         catch(Exception e){

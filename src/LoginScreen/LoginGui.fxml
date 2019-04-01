@@ -27,12 +27,12 @@
          <font>
             <Font size="15.0" />
          </font></JFXPasswordField>
-      <Button id="LoginButton" fx:id="LoginButton" defaultButton="true" layoutX="33.0" layoutY="320.0" mnemonicParsing="false" onAction="#handLogin" prefHeight="55.0" prefWidth="124.0" stylesheets="@LoginStyle.css" text="Login" textFill="WHITE">
+      <Button id="LoginButton" fx:id="LoginButton" defaultButton="true" layoutX="33.0" layoutY="320.0" mnemonicParsing="false" onAction="#handLogin" prefHeight="55.0" prefWidth="124.0" styleClass="LoginButton" stylesheets="@LoginStyle.css" text="Login" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button id="LoginButton" defaultButton="true" layoutX="196.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleSignUp" prefHeight="55.0" prefWidth="124.0" stylesheets="@LoginStyle.css" text="Sign Up" textFill="WHITE">
+      <Button id="LoginButton" defaultButton="true" layoutX="196.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleSignUp" prefHeight="55.0" prefWidth="124.0" styleClass="LoginButton" stylesheets="@LoginStyle.css" text="Sign Up" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
