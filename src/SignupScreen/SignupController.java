@@ -50,6 +50,21 @@ public class SignupController {
 
         try {
 
+            //Incase any of the fields are empty
+            if(
+                    UsernameField.getText().equals("") ||
+                    PasswordField.getText().equals("") ||
+                    firstNameField.getText().equals("") ||
+                    lastNameField.getText().equals("") ||
+                    emailField.getText().equals("")
+            )
+            {
+                errorLabel.setText("One of the fields is empty");
+                errorLabel.setOpacity(0.4);
+                return;
+            }
+
+
             //If not the same password then stop the operation
             if(!(repeatPasswordField.getText().equals(PasswordField.getText()))){
 
