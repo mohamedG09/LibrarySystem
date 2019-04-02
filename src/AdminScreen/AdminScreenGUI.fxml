@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="AdminScreen.AdminScreenController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="686.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminScreen.AdminScreenController">
+   <children>
+      <JFXTabPane fx:id="TabPane" prefHeight="686.0" prefWidth="900.0" stylesheets="@AdminScreenStyle.css" tabClosingPolicy="UNAVAILABLE" tabDragPolicy="REORDER" tabMaxHeight="0.0" tabMaxWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab text="Students">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="900.0">
+                     <children>
+                        <TableView fx:id="studentTable" editable="true" prefHeight="628.0" prefWidth="900.0" style="-fx-background-color: #252839;" stylesheets="@AdminScreenStyle.css" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="userCol" minWidth="0.0" prefWidth="50.0" text="Username" />
+                            <TableColumn fx:id="firstNameCol" minWidth="0.0" prefWidth="50.0" text="First Name" />
+                              <TableColumn fx:id="LastNameCol" minWidth="0.0" prefWidth="50.0" text="Last Name" />
+                              <TableColumn fx:id="EmailCol" minWidth="0.0" prefWidth="50.0" text="Email" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Books">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="626.0" prefWidth="900.0" />
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
 </AnchorPane>

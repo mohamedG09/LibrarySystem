@@ -18,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+
 public class LoginController {
     @FXML
     private JFXTextField userField;
@@ -66,6 +67,7 @@ public class LoginController {
                     currentStage.close();
 
                     stage.setTitle("Student Page");
+                    stage.setResizable(false);
                     stage.show();
                     resultsStudents.close();
                     return;
@@ -95,7 +97,7 @@ public class LoginController {
                     stage.setResizable(false);
                     stage.setTitle("Admin Page");
                     stage.show();
-                    return;
+
                 }
                 else {
 
@@ -110,6 +112,7 @@ public class LoginController {
                     currentStage.close();
 
                     stage.setTitle("Student Page");
+                    stage.setResizable(false);
                     stage.show();
                 }
                 statement.close();

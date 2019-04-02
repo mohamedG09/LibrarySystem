@@ -1,0 +1,25 @@
+.tab {
+    -fx-pref-width: 440px;
+    -fx-pref-height: 60px;
+    -fx-background-color: #252839;
+}
+
+.tab-header-background{
+    -fx-background-color: #252839;
+}
+
+.jfx-tab-pane .tab-header-area .jfx-rippler{
+    -jfx-rippler-fill :#f2b632;
+}
+
+.tab-selected-line {
+    -fx-background-color: #ffc300;
+    -fx-stroke-width: 5pt;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #f2b632;
+}
+
+
+

@@ -7,6 +7,7 @@ module LibrarySystem {
     requires com.jfoenix;
     requires java.sql;
 
+
     opens AdminScreen;
     opens DataPackage;
     opens LoginScreen;
