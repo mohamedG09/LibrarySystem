@@ -16,6 +16,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -137,6 +138,7 @@ public class SignupController {
             Currentstage.close();
 
             stage.setTitle("Login");
+            stage.getIcons().add(new Image("/book.png"));
             stage.setResizable(false);
             stage.show();
 

@@ -40,7 +40,7 @@
          </font>
       </JFXTextField>
       <ImageView fx:id="imageBox" fitHeight="340.0" fitWidth="276.0" layoutX="409.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true" />
-      <Button defaultButton="true" layoutX="440.0" layoutY="458.0" mnemonicParsing="false" onAction="#handleInsertBook" prefHeight="55.0" prefWidth="214.0" styleClass="LoginButton" stylesheets="@../LoginScreen/LoginStyle.css" text="Insert Book" textFill="WHITE">
+      <Button defaultButton="true" layoutX="449.0" layoutY="457.0" mnemonicParsing="false" onAction="#handleInsertBook" prefHeight="55.0" prefWidth="214.0" styleClass="LoginButton" stylesheets="@../LoginScreen/LoginStyle.css" text="Insert Book" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>

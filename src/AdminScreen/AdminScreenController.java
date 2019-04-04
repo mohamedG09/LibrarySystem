@@ -172,6 +172,8 @@ public class AdminScreenController implements Initializable {
 
             }
             tableBooks.setItems(obBook);
+
+            booksRes.close();
         }
         catch(Exception e){
             e.printStackTrace();

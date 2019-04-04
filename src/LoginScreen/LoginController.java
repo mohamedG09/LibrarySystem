@@ -1,6 +1,7 @@
 package LoginScreen;
 
 import DataPackage.DataSource;
+import StudentScreen.StudentScreenController;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
@@ -22,7 +23,7 @@ import javafx.stage.Stage;
 
 public class LoginController {
     @FXML
-    private JFXTextField userField;
+    protected JFXTextField userField;
 
     @FXML
     private JFXPasswordField PasswordField;
@@ -44,6 +45,7 @@ public class LoginController {
             //Getting names and password of the user passed
             String name = userField.getText();
             String pass = PasswordField.getText();
+            StudentScreenController.setName(name);
 
 
             statement.setString(1,name);
