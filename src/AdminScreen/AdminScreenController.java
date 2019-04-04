@@ -154,6 +154,31 @@ public class AdminScreenController implements Initializable {
 
     }
 
+    @FXML
+    void handleRefreshButton(ActionEvent event) {
+        tableBooks.getItems().clear();
+
+        try{
+            ResultSet booksRes = DataSource.getConnection().prepareStatement("SELECT * FROM Books").executeQuery();
+
+            //Populating books table
+            while(booksRes.next()){
+
+                obBook.add(new Book(booksRes.getInt(1)
+                        ,booksRes.getString(2)
+                        , booksRes.getString(3)
+                        , booksRes.getString(5)));
+
+
+            }
+            tableBooks.setItems(obBook);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
 
 
 

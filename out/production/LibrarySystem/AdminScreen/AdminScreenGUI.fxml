@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -49,6 +51,18 @@
                            <font>
                               <Font size="15.0" />
                            </font>
+                        </Button>
+                        <Button id="LoginButton" defaultButton="true" layoutX="677.0" layoutY="568.0" mnemonicParsing="false" onAction="#handleRefreshButton" prefHeight="54.0" prefWidth="55.0" styleClass="LoginButton" stylesheets="@../LoginScreen/LoginStyle.css" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="36.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../refresh.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </Button>
                      </children></AnchorPane>
               </content>

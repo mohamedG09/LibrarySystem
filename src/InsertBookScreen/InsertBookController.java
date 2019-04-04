@@ -38,6 +38,13 @@ public class InsertBookController  {
     @FXML
     private Label errorLabel;
 
+    private void settingEmpty(){
+        fieldISBN.setText("");
+        fieldTitle.setText("");
+        fieldImageURL.setText("");
+        fieldAuthor.setText("");
+    }
+
     @FXML
     void handleImagePreview(ActionEvent event) {
 
@@ -72,6 +79,7 @@ public class InsertBookController  {
 
                 errorLabel.setText("Field/s left empty");
                 errorLabel.setStyle("-fx-background-color: #cf0000; -fx-opacity: 0.4;");
+                settingEmpty();
                 return;
 
             }
@@ -86,6 +94,7 @@ public class InsertBookController  {
             catch(Exception e){
                 errorLabel.setText("Illegal ISBN");
                 errorLabel.setStyle("-fx-background-color: #cf0000; -fx-opacity: 0.4;");
+                settingEmpty();
                 return;
             }
             temp.setPicLink(fieldImageURL.getText());
@@ -99,6 +108,7 @@ public class InsertBookController  {
                 if (x == temp.getIsbn()) {
                     errorLabel.setText("ISBN already Exists");
                     errorLabel.setStyle("-fx-background-color: #cf0000; -fx-opacity: 0.4;");
+                    settingEmpty();
                     return;
                 }
 
@@ -114,6 +124,7 @@ public class InsertBookController  {
 
             errorLabel.setText("Book Inserted Successfully");
             errorLabel.setStyle("-fx-background-color: #00ff7f; -fx-opacity: 0.4;");
+            settingEmpty();
 
 
 
@@ -122,5 +133,6 @@ public class InsertBookController  {
             e.printStackTrace();
         }
     }
+
 
 }
