@@ -50,5 +50,10 @@
             <Font size="15.0" />
          </font>
       </Button>
+      <Label id="invalidLabel" fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="497.0" prefHeight="31.0" prefWidth="287.0" stylesheets="@../LoginScreen/LoginStyle.css" text="ISBN already exists" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="Leelawadee UI" size="19.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
