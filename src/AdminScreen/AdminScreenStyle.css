@@ -14,12 +14,9 @@
 
 .tab-selected-line {
     -fx-background-color: #ffc300;
-    -fx-stroke-width: 5pt;
+    fx-stroke-width: 3pt;
 }
 
 .table-row-cell:selected {
     -fx-background-color: #f2b632;
 }
-
-
-

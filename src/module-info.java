@@ -10,8 +10,10 @@ module LibrarySystem {
 
     opens AdminScreen;
     opens DataPackage;
+    opens InsertBookScreen;
     opens LoginScreen;
     opens SignupScreen;
     opens StudentScreen;
+
 
 }

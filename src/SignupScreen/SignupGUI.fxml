@@ -18,6 +18,11 @@
             <DropShadow blurType="GAUSSIAN" height="85.8" radius="39.42" spread="0.2" width="73.88" />
          </effect>
       </Label>
+      <JFXTextField fx:id="UsernameField" focusColor="#b5b5b7" labelFloat="true" layoutX="40.0" layoutY="114.0" prefHeight="39.0" prefWidth="287.0" promptText="Username" style="-fx-text-fill: #b5b5b7;" stylesheets="@../LoginScreen/LoginStyle.css" unFocusColor="#677077">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
       <JFXTextField fx:id="firstNameField" focusColor="#b5b5b7" labelFloat="true" layoutX="38.0" layoutY="183.0" prefHeight="39.0" prefWidth="287.0" promptText="First Name" style="-fx-text-fill: #b5b5b7;" stylesheets="@../LoginScreen/LoginStyle.css" unFocusColor="#677077">
          <font>
             <Font size="15.0" />
@@ -48,11 +53,6 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <JFXTextField fx:id="UsernameField" focusColor="#b5b5b7" labelFloat="true" layoutX="40.0" layoutY="114.0" prefHeight="39.0" prefWidth="287.0" promptText="Username" style="-fx-text-fill: #b5b5b7;" stylesheets="@../LoginScreen/LoginStyle.css" unFocusColor="#677077">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </JFXTextField>
       <Label id="invalidLabel" fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="601.0" prefHeight="31.0" prefWidth="287.0" stylesheets="@../LoginScreen/LoginStyle.css" text="Invalid Username/Password" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
          <font>
             <Font name="Leelawadee UI" size="19.0" />

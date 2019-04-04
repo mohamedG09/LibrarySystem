@@ -15,6 +15,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -68,6 +69,7 @@ public class LoginController {
 
                     stage.setTitle("Student Page");
                     stage.setResizable(false);
+                    stage.getIcons().add(new Image("/book.png"));
                     stage.show();
                     resultsStudents.close();
                     return;
@@ -96,6 +98,7 @@ public class LoginController {
 
                     stage.setResizable(false);
                     stage.setTitle("Admin Page");
+                    stage.getIcons().add(new Image("/book.png"));
                     stage.show();
 
                 }
@@ -113,6 +116,7 @@ public class LoginController {
 
                     stage.setTitle("Student Page");
                     stage.setResizable(false);
+                    stage.getIcons().add(new Image("/book.png"));
                     stage.show();
                 }
                 statement.close();
@@ -145,6 +149,7 @@ public class LoginController {
             currentStage.close();
             stage.setResizable(false);
             stage.setTitle("Signup Page");
+            stage.getIcons().add(new Image("/book.png"));
             stage.show();
         }
         catch(Exception e){

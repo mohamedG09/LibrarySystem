@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class LoginApp extends Application {
@@ -15,6 +16,7 @@ public class LoginApp extends Application {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setTitle("Login");
+        stage.getIcons().add(new Image("/book.png"));
         stage.show();
     }
 

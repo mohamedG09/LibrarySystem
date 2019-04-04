@@ -2,11 +2,13 @@ package AdminScreen;
 
 
 
+import DataPackage.Book;
 import DataPackage.DataSource;
 import DataPackage.Student;
 import com.jfoenix.controls.JFXTabPane;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -42,11 +44,30 @@ public class AdminScreenController implements Initializable {
 
     ObservableList<Student> oblist = FXCollections.observableArrayList();
 
+    @FXML
+    private TableView<Book> tableBooks;
+
+    ObservableList<Book> obBook = FXCollections.observableArrayList();
+
+    @FXML
+    private TableColumn<Book, String> colISBN;
+
+    @FXML
+    private TableColumn<Book, String> colTitle;
+
+    @FXML
+    private TableColumn<Book, String> colAuthor;
+
+    @FXML
+    private TableColumn<Book, String> colBorrower;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         try {
 
+
+            //Copying from Database to Students Table
             Connection conn = DataSource.getConnection();
             ResultSet resultSet = conn.prepareStatement("SELECT * FROM Students").executeQuery();
 
@@ -71,10 +92,29 @@ public class AdminScreenController implements Initializable {
 
             studentTable.setItems(oblist);
 
+            //Copying from DB into books table
+
+            colAuthor.setCellValueFactory(new PropertyValueFactory<>("author"));
+            colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
+            colBorrower.setCellValueFactory(new PropertyValueFactory<>("studentBor"));
+            colISBN.setCellValueFactory(new PropertyValueFactory<>("isbn"));
+
+            ResultSet booksRes = DataSource.getConnection().prepareStatement("SELECT * FROM Books").executeQuery();
+
+            //Populating books table
+            while(booksRes.next()){
+
+                obBook.add(new Book(booksRes.getInt(1)
+                        ,booksRes.getString(2)
+                        , booksRes.getString(3)
+                        , booksRes.getString(5)));
 
 
+            }
+            tableBooks.setItems(obBook);
 
 
+            booksRes.close();
             resultSet.close();
             conn.close();
         }
@@ -84,4 +124,19 @@ public class AdminScreenController implements Initializable {
 
 
     }
+
+
+    @FXML
+    void handleInsertBook(ActionEvent event) {
+
+    }
+
+
+
+
+
+
+
+
+
 }
