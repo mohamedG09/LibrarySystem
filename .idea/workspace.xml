@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46f3c77b-9d85-461d-a066-7d336c724f44" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatabaseLibrary.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseLibrary.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StudentScreen/StudentScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StudentScreen/StudentScreenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StudentScreen/StudentScreenGUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/StudentScreen/StudentScreenGUI.fxml" afterDir="false" />
@@ -35,14 +34,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/StudentScreen/StudentScreenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="162" />
+            <state relative-caret-position="269">
+              <caret line="164" column="47" selection-start-line="164" selection-start-column="47" selection-end-line="164" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AdminScreen/AdminScreenStyle.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -151,7 +159,6 @@
         <option value="$PROJECT_DIR$/src/DataPackage/Student.java" />
         <option value="$PROJECT_DIR$/src/AdminScreen/AdminScreenGUI.fxml" />
         <option value="$PROJECT_DIR$/src/LoginScreen/LoginApp.java" />
-        <option value="$PROJECT_DIR$/src/AdminScreen/AdminScreenStyle.css" />
         <option value="$PROJECT_DIR$/src/DataPackage/Book.java" />
         <option value="$PROJECT_DIR$/src/InsertBookScreen/InsertBookGUI.fxml" />
         <option value="$PROJECT_DIR$/src/module-info.java" />
@@ -160,6 +167,7 @@
         <option value="$PROJECT_DIR$/src/SignupScreen/SignupController.java" />
         <option value="$PROJECT_DIR$/src/LoginScreen/LoginController.java" />
         <option value="$PROJECT_DIR$/src/StudentScreen/StudentScreenController.java" />
+        <option value="$PROJECT_DIR$/src/AdminScreen/AdminScreenStyle.css" />
       </list>
     </option>
   </component>
@@ -236,7 +244,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554464604241" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554466913199" />
     <property name="last_opened_file_path" value="D:/SQLITE JDBC/sqlite-jdbc-3.23.1.jar!/" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -323,12 +331,12 @@
       <workItem from="1554289617673" duration="764000" />
       <workItem from="1554376327721" duration="17432000" />
       <workItem from="1554448936642" duration="650000" />
-      <workItem from="1554459768337" duration="4652000" />
+      <workItem from="1554459768337" duration="7090000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72680000" />
+    <option name="totallyTimeSpent" value="75118000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -352,7 +360,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33048433" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33048433" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3988604" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -475,13 +483,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AdminScreen/AdminScreenStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-232">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/InsertBookScreen/InsertBookGUI.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -578,11 +579,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StudentScreen/StudentScreenController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="162" />
+        <state relative-caret-position="269">
+          <caret line="164" column="47" selection-start-line="164" selection-start-column="47" selection-end-line="164" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AdminScreen/AdminScreenStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>

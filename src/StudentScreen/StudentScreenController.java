@@ -137,7 +137,37 @@ public class StudentScreenController implements Initializable  {
         //Updating Database
         try{
 
-            
+            //Retriving the count of students
+            PreparedStatement studentStat = DataSource.getConnection()
+                    .prepareStatement("SELECT * FROM Students WHERE Username=?");
+
+            studentStat.setString(1,name);
+
+            ResultSet studentResult = studentStat.executeQuery();
+
+            int booksCountTemp = studentResult.getInt(6);
+            System.out.println(studentResult.getInt(6));
+
+            //Checking if more than three borrows
+            if(studentResult.getInt(6)>=3){
+                errorLabel.setText("Maximum of three borrows is allowed");
+                errorLabel.setOpacity(0.4);
+                studentStat.close();
+                studentResult.close();
+                return;
+            }
+
+            studentStat.close();
+            //Updating number of borrows
+            PreparedStatement updateCount = DataSource.getConnection()
+                    .prepareStatement("UPDATE Students SET(countBooks)=(?) WHERE Students.Username=?");
+
+            updateCount.setInt(1,booksCountTemp+1);
+            updateCount.setString(2,name);
+            updateCount.executeUpdate();
+            updateCount.close();
+
+
 
 
 

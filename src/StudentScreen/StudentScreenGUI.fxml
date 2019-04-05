@@ -32,7 +32,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label id="invalidLabel" fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="287.0" stylesheets="@../LoginScreen/LoginStyle.css" text="Invalid Username/Password" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+            <Label id="invalidLabel" fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="476.0" stylesheets="@../LoginScreen/LoginStyle.css" text="Invalid Username/Password" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
                <font>
                   <Font name="Leelawadee UI" size="19.0" />
                </font>
@@ -52,7 +52,7 @@
          <contextMenu>
             <ContextMenu>
               <items>
-                <MenuItem fx:id="contextBorrow" mnemonicParsing="false" onAction="#handleContextDelete" text="Borrow" />
+                <MenuItem fx:id="contextBorrow" onAction="#handleContextDelete" styleClass="borrowItem" text="Borrow" />
               </items>
             </ContextMenu>
          </contextMenu>
