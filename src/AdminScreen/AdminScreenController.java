@@ -181,6 +181,47 @@ public class AdminScreenController implements Initializable {
     @FXML
     void handleDeleteBook(ActionEvent event) {
 
+        try{
+
+            Book borBook = tableBooks.getSelectionModel().getSelectedItem();
+            if(!borBook.getStudentBor().equals("none")){
+
+                //Before Deleting we have to decrement by one
+                //If someone already borrowed it
+                PreparedStatement statCount = DataSource.getConnection()
+                        .prepareStatement("SELECT * FROM Students WHERE Username=?");
+
+                statCount.setString(1,borBook.getStudentBor());
+                ResultSet resCount = statCount.executeQuery();
+                int countStu = resCount.getInt(6);
+                statCount.close();
+                resCount.close();
+
+                countStu--;
+                PreparedStatement updateCount = DataSource.getConnection()
+                        .prepareStatement("UPDATE Students SET(countBooks)=(?) WHERE Students.Username=?");
+
+                updateCount.setInt(1,countStu);
+                updateCount.setString(2,borBook.getStudentBor());
+                updateCount.executeUpdate();
+                updateCount.close();
+
+            }
+
+            PreparedStatement statement = DataSource.getConnection()
+                    .prepareStatement("DELETE FROM Books WHERE Books.ISBN=?");
+
+            statement.setInt(1,borBook.getIsbn());
+            statement.executeUpdate();
+            statement.close();
+
+            handleRefreshButton(event);
+
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
     }
 
     @FXML

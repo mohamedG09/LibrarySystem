@@ -1,5 +1,6 @@
 package InsertBookScreen;
 
+import AdminScreen.AdminScreenController;
 import DataPackage.Book;
 import DataPackage.DataSource;
 import com.jfoenix.controls.JFXTextField;
@@ -125,7 +126,6 @@ public class InsertBookController  {
             errorLabel.setText("Book Inserted Successfully");
             errorLabel.setStyle("-fx-background-color: #00ff7f; -fx-opacity: 0.4;");
             settingEmpty();
-
 
 
             statment.close();
