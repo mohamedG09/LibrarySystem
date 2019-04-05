@@ -89,6 +89,8 @@ public class StudentScreenController implements Initializable  {
 
             ResultSet booksRes = DataSource.getConnection().prepareStatement("SELECT * FROM Books").executeQuery();
 
+
+            int i=0;
             //Populating books table
             while(booksRes.next()){
 
@@ -101,6 +103,9 @@ public class StudentScreenController implements Initializable  {
                         , booksRes.getString(3)
                         , isBorrowed));
 
+                if(booksRes.getString(5).equals(name)){
+
+                }
 
             }
             tableBooks.setItems(obBook);
@@ -116,7 +121,7 @@ public class StudentScreenController implements Initializable  {
     }
 
     @FXML
-    void handleContextDelete(ActionEvent event) {
+    void handleContextBorrow(ActionEvent event) {
 
         //Getting the row to be updated
         Book borBook = tableBooks.getSelectionModel().getSelectedItem();
@@ -198,6 +203,6 @@ public class StudentScreenController implements Initializable  {
 
 
 
+
 }
 
-//TODO Highlight books borrowed

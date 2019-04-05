@@ -22,10 +22,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class AdminScreenController implements Initializable {
@@ -180,6 +177,76 @@ public class AdminScreenController implements Initializable {
         }
 
     }
+
+    @FXML
+    void handleDeleteBook(ActionEvent event) {
+
+    }
+
+    @FXML
+    void handleDeleteStudent(ActionEvent event) {
+
+    }
+
+    @FXML
+    void handleRetrieve(ActionEvent event) {
+
+        Book borBook = tableBooks.getSelectionModel().getSelectedItem();
+
+        //If a book is not borrowed
+        if(borBook.getStudentBor().equals("none"))
+            return;
+
+        //If a book is to be returned
+        //count for corresponding studnet dec
+        //studentBor set to none
+        try{
+
+            //Setting book borrower to none
+            PreparedStatement statement = DataSource.getConnection()
+                    .prepareStatement("UPDATE Books SET(StudentBor)=(?) WHERE Books.StudentBor=? and Books.ISBN=?");
+
+            statement.setString(1,"none");
+            statement.setString(2,borBook.getStudentBor());
+            statement.setInt(3,borBook.getIsbn());
+            statement.executeUpdate();
+            statement.close();
+
+            //Dec count
+            PreparedStatement statCount = DataSource.getConnection()
+                    .prepareStatement("SELECT * FROM Students WHERE Username=?");
+
+            statCount.setString(1,borBook.getStudentBor());
+            ResultSet resCount = statCount.executeQuery();
+            int countStu = resCount.getInt(6);
+            statCount.close();
+            resCount.close();
+
+            countStu--;
+            PreparedStatement updateCount = DataSource.getConnection()
+                    .prepareStatement("UPDATE Students SET(countBooks)=(?) WHERE Students.Username=?");
+
+            updateCount.setInt(1,countStu);
+            updateCount.setString(2,borBook.getStudentBor());
+            updateCount.executeUpdate();
+            updateCount.close();
+
+            tableBooks.refresh();
+
+
+
+
+
+        }
+
+        catch(Exception e){
+
+            e.printStackTrace();
+
+        }
+
+    }
+
 
 
 

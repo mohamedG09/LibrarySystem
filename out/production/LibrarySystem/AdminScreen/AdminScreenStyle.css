@@ -20,8 +20,3 @@
 .table-row-cell:selected {
     -fx-background-color: #f2b632;
 }
-
-.menu-item:hover {
-    -fx-background-color: red;
-    -fx-text-fill: red;
-}

@@ -52,7 +52,7 @@
          <contextMenu>
             <ContextMenu>
               <items>
-                <MenuItem fx:id="contextBorrow" onAction="#handleContextDelete" styleClass="borrowItem" text="Borrow" />
+                <MenuItem fx:id="contextBorrow" onAction="#handleContextBorrow" styleClass="borrowItem" text="Borrow" />
               </items>
             </ContextMenu>
          </contextMenu>
