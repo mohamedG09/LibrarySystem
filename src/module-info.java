@@ -9,6 +9,7 @@ module LibrarySystem {
 
 
     opens AdminScreen;
+    opens BookViewer;
     opens DataPackage;
     opens InsertBookScreen;
     opens LoginScreen;

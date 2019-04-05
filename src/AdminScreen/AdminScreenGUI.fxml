@@ -58,8 +58,9 @@
                            <contextMenu>
                               <ContextMenu>
                                  <items>
-                                    <MenuItem mnemonicParsing="false" onAction="#handleRetrieve" text="Return" />
+                                    <MenuItem mnemonicParsing="false" onAction="#handleView" text="View" />
                                     <MenuItem mnemonicParsing="false" onAction="#handleDeleteBook" text="Delete" />
+                                    <MenuItem mnemonicParsing="false" onAction="#handleRetrieve" text="Return" />
                                  </items>
                               </ContextMenu>
                            </contextMenu>

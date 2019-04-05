@@ -2,6 +2,7 @@ package AdminScreen;
 
 
 
+import BookViewer.BookViewController;
 import DataPackage.Book;
 import DataPackage.DataSource;
 import DataPackage.Student;
@@ -337,6 +338,35 @@ public class AdminScreenController implements Initializable {
 
             e.printStackTrace();
 
+        }
+
+    }
+
+    @FXML
+    void handleView(ActionEvent event) {
+
+        try {
+            Book borBook = tableBooks.getSelectionModel().getSelectedItem();
+            BookViewController.setBookISBN(borBook.getIsbn()+"");
+
+
+
+            //Opening new scene
+            Pane root = FXMLLoader.load(getClass().getResource("/BookViewer/BookViewerGUI.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+
+            stage.setResizable(false);
+            stage.setTitle("Book Viewer");
+            stage.getIcons().add(new Image("/book.png"));
+            stage.show();
+
+
+
+        }
+        catch(Exception e){
+            e.printStackTrace();
         }
 
     }
