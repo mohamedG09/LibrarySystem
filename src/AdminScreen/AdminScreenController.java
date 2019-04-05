@@ -215,7 +215,11 @@ public class AdminScreenController implements Initializable {
             statement.executeUpdate();
             statement.close();
 
+            //Refreshing books table
             handleRefreshButton(event);
+
+
+
 
         }
         catch(Exception e){
@@ -226,6 +230,55 @@ public class AdminScreenController implements Initializable {
 
     @FXML
     void handleDeleteStudent(ActionEvent event) {
+
+        Student delStudent = studentTable.getSelectionModel().getSelectedItem();
+        try{
+            //If the student borrowed anybook, then make it none
+            PreparedStatement statement = DataSource.getConnection()
+                    .prepareStatement("UPDATE Books SET(StudentBor)=(?) WHERE Books.StudentBor=?");
+
+            statement.setString(1,"none");
+            statement.setString(2,delStudent.getUserName());
+            statement.executeUpdate();
+            statement.close();
+
+            PreparedStatement statementDelete = DataSource.getConnection()
+                    .prepareStatement("DELETE FROM Students WHERE Students.Username=?");
+
+            statementDelete.setString(1,delStudent.getUserName());
+            statementDelete.executeUpdate();
+            statementDelete.close();
+
+            handleRefreshButton(event);
+
+            //Refreshing students table
+            studentTable.getItems().clear();
+            oblist.clear();
+            Connection conn = DataSource.getConnection();
+            ResultSet resultSet = conn.prepareStatement("SELECT * FROM Students").executeQuery();
+
+            while(resultSet.next()){
+
+                Student temp = new Student();
+                temp.setUserName(resultSet.getString(1));
+                temp.setFirstName(resultSet.getString(2));
+                temp.setLastName(resultSet.getString(3));
+                temp.setEmail(resultSet.getString(4));
+
+                oblist.add(temp);
+
+            }
+            studentTable.setItems(oblist);
+
+
+
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+
+
 
     }
 
