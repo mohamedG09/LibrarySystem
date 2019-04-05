@@ -6,15 +6,16 @@ import DataPackage.DataSource;
 import LoginScreen.LoginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+
 
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -44,7 +45,13 @@ public class StudentScreenController implements Initializable  {
     private TableColumn<Book, String> colTitle;
 
     @FXML
+    private Label errorLabel;
+
+    @FXML
     private TableColumn<Book, String> colAuthor;
+
+    @FXML
+    private MenuItem contextBorrow;
 
     @FXML
     private TableColumn<Book, String> colBorrower;
@@ -86,7 +93,7 @@ public class StudentScreenController implements Initializable  {
             while(booksRes.next()){
 
                 String isBorrowed = "True";
-                if(booksRes.getString(5)==null){
+                if(booksRes.getString(5).equals("none")){
                     isBorrowed = "False";
                 }
                 obBook.add(new Book(booksRes.getInt(1)
@@ -107,6 +114,60 @@ public class StudentScreenController implements Initializable  {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    void handleContextDelete(ActionEvent event) {
+
+        //Getting the row to be updated
+        Book borBook = tableBooks.getSelectionModel().getSelectedItem();
+
+        //Incase no one has borrowed the book
+        if(borBook.getStudentBor().equals("False")){
+
+            borBook.setStudentBor(name);
+
+        }
+        else{
+            System.out.println("Book is already borrowed!");
+            errorLabel.setText("Book is already borrowed");
+            errorLabel.setOpacity(0.4);
+            return;
+        }
+
+        //Updating Database
+        try{
+
+            
+
+
+
+            PreparedStatement statment
+                    = DataSource.getConnection()
+                    .prepareStatement("UPDATE Books SET(StudentBor)=(?) WHERE Books.ISBN=?");
+
+            statment.setString(1,borBook.getStudentBor());
+            statment.setInt(2,borBook.getIsbn());
+            statment.executeUpdate();
+            tableBooks.refresh();
+
+
+
+            statment.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+
 }
 
 //TODO Highlight books borrowed

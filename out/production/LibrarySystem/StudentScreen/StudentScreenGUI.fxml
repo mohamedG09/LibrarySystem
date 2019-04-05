@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="649.0" prefWidth="883.0" style="-fx-background-color: #252839;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StudentScreen.StudentScreenController">
    <children>
@@ -26,9 +27,14 @@
       </HBox>
       <HBox layoutY="34.0" prefHeight="34.0" prefWidth="971.0" style="-fx-background-color: #f2b632;">
          <children>
-            <Label fx:id="LabelEmail" prefHeight="34.0" prefWidth="334.0" text="Email:" textFill="WHITE">
+            <Label fx:id="LabelEmail" prefHeight="34.0" prefWidth="477.0" text="Email:" textFill="WHITE">
                <font>
                   <Font size="18.0" />
+               </font>
+            </Label>
+            <Label id="invalidLabel" fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="287.0" stylesheets="@../LoginScreen/LoginStyle.css" text="Invalid Username/Password" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+               <font>
+                  <Font name="Leelawadee UI" size="19.0" />
                </font>
             </Label>
          </children>
@@ -43,6 +49,13 @@
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem fx:id="contextBorrow" mnemonicParsing="false" onAction="#handleContextDelete" text="Borrow" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
       </TableView>
    </children>
 </AnchorPane>
