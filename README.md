@@ -2,10 +2,11 @@ Library System to Practice JDBC and sqlite
 
 
 Login Screen:
-![image](https://user-images.githubusercontent.com/40148715/55665631-564e9b00-5854-11e9-87ab-f4e3e5d1fa5b.png)
+![image](https://user-images.githubusercontent.com/40148715/55665715-556a3900-5855-11e9-96de-3919be019fdc.png)
 
 User Screen:
-![image](https://user-images.githubusercontent.com/40148715/55665631-564e9b00-5854-11e9-87ab-f4e3e5d1fa5b.png)
+![image](https://user-images.githubusercontent.com/40148715/55665707-42efff80-5855-11e9-8dea-790aa08bf961.png)
+
 
 Admin Screen -> User Tab:
 ![image](https://user-images.githubusercontent.com/40148715/55665646-a9285280-5854-11e9-8ded-815ee862f559.png)
