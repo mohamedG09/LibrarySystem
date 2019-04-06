@@ -19,13 +19,13 @@ import java.util.ResourceBundle;
 
 
 public class BookViewController implements Initializable {
-    private static String bookISBN;
+    private static int bookISBN;
 
-    public static String getBookISBN() {
+    public static int getBookISBN() {
         return bookISBN;
     }
 
-    public static void setBookISBN(String bookISBN) {
+    public static void setBookISBN(int bookISBN) {
         BookViewController.bookISBN = bookISBN;
     }
 
@@ -53,8 +53,10 @@ public class BookViewController implements Initializable {
             PreparedStatement statement = DataSource.getConnection()
                     .prepareStatement("SELECT * FROM Books WHERE Books.ISBN = ?");
 
-            statement.setString(1,bookISBN);
+            statement.setInt(1,bookISBN);
+            System.out.println(statement);
             ResultSet results = statement.executeQuery();
+
 
             temp.setTitle(results.getString(2));
             temp.setIsbn(results.getInt(1));

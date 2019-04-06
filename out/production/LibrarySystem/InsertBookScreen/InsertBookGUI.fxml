@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="528.0" prefWidth="726.0" style="-fx-background-color: #252839;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InsertBookScreen.InsertBookController">
    <children>
       <Label alignment="CENTER" layoutX="179.0" prefHeight="86.0" prefWidth="368.0" style="-fx-text-fill: #f2b632;" text="Insert Book">
@@ -19,7 +18,7 @@
             <DropShadow blurType="GAUSSIAN" height="85.8" radius="39.42" spread="0.2" width="73.88" />
          </effect>
       </Label>
-      <JFXTextField fx:id="fieldISBN" focusColor="#b5b5b7" labelFloat="true" layoutX="14.0" layoutY="127.0" prefHeight="39.0" prefWidth="287.0" promptText="ISBN" style="-fx-text-fill: #b5b5b7;" stylesheets="@../LoginScreen/LoginStyle.css" unFocusColor="#677077">
+      <JFXTextField fx:id="fieldISBN" focusColor="#b5b5b7" labelFloat="true" layoutX="14.0" layoutY="127.0" prefHeight="39.0" prefWidth="287.0" promptText="ISBN-10" style="-fx-text-fill: #b5b5b7;" stylesheets="@../LoginScreen/LoginStyle.css" unFocusColor="#677077">
          <font>
             <Font size="15.0" />
          </font>

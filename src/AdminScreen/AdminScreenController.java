@@ -347,7 +347,7 @@ public class AdminScreenController implements Initializable {
 
         try {
             Book borBook = tableBooks.getSelectionModel().getSelectedItem();
-            BookViewController.setBookISBN(borBook.getIsbn()+"");
+            BookViewController.setBookISBN(borBook.getIsbn());
 
 
 
